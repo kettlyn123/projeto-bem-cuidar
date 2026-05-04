@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BemCuidar - Saúde na Palma da Mão</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- SPA Screen Containers -->
+        <main id="screen-container">
+            <!-- First Screen -->
+            <section id="first-screen" class="screen active">
+                <div class="content-center">
+                    <img src="assets/logo.png" alt="BemCuidar Logo" class="main-logo">
+                    <h1 class="logo-text">BemCuidar</h1>
+                    <p class="tagline">Cuidando de quem você ama, <br>onde quer que você esteja.</p>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn btn-primary" onclick="navigate('cadastro-passo-1')">Criar minha conta</button>
+                    <button class="btn btn-secondary" onclick="navigate('login')">Já tenho conta</button>
+                </div>
+            </section>
+
+            <!-- Login -->
+            <section id="login" class="screen">
+                <button class="btn-back" onclick="navigate('first-screen')">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                </button>
+                <h2>Acesse sua conta</h2>
+                <p class="tagline" style="max-width: 100%">Que bom ver você de novo!</p>
+                
+                <div class="form-card">
+                    <form id="login-form">
+                        <div class="form-group">
+                            <label for="login-email">E-mail</label>
+                            <input type="email" id="login-email" placeholder="seu@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">Senha</label>
+                            <input type="password" id="login-password" placeholder="••••••••" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary" onclick="navigate('home'); return false;">Entrar</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Cadastro Passo 1 -->
+            <section id="cadastro-passo-1" class="screen">
+                <button class="btn-back" onclick="navigate('first-screen')">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                </button>
+                <h2>Comece agora</h2>
+                <p class="tagline" style="max-width: 100%">Crie sua conta para cuidar da sua saúde.</p>
+                
+                <div class="form-card">
+                    <form id="signup-form-1">
+                        <div class="form-group">
+                            <label for="signup-email">E-mail</label>
+                            <input type="email" id="signup-email" placeholder="seu@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signup-password">Senha</label>
+                            <input type="password" id="signup-password" placeholder="••••••••" required>
+                        </div>
+                        <button type="button" class="btn btn-primary" onclick="navigate('cadastro-passo-2')">Próximo passo</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Cadastro Passo 2 -->
+            <section id="cadastro-passo-2" class="screen">
+                <button class="btn-back" onclick="navigate('cadastro-passo-1')">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                </button>
+                <h2>Informações Pessoais</h2>
+                <p class="tagline" style="max-width: 100%">Falta pouco para você acessar o BemCuidar.</p>
+
+                <div class="form-card">
+                    <form id="signup-form-2">
+                        <div class="form-group">
+                            <label for="full-name">Nome Completo</label>
+                            <input type="text" id="full-name" placeholder="Como quer ser chamado?" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefone</label>
+                            <input type="tel" id="phone" placeholder="(00) 00000-0000" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="birth-date">Data de Nascimento</label>
+                            <input type="date" id="birth-date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ubs-select">Sua UBS de referência</label>
+                            <select id="ubs-select" required>
+                                <option value="" disabled selected>Selecione sua UBS</option>
+                                <option value="1">UBS Centro</option>
+                                <option value="2">UBS Vila Maria</option>
+                                <option value="3">UBS Jardim das Flores</option>
+                            </select>
+                        </div>
+                        <button type="button" class="btn btn-primary" onclick="navigate('home')">Concluir cadastro</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Home -->
+            <section id="home" class="screen">
+                <header class="screen-header">
+                    <h1 class="logo-small">BemCuidar</h1>
+                </header>
+                <div class="home-content">
+                    <div class="welcome-section">
+                        <h2>Olá, Maria! 👋</h2>
+                        <p>Como está sua saúde hoje?</p>
+                    </div>
+                    <div class="calendar-strip" id="calendar-strip">
+                        <!-- Days will be injected by JS -->
+                    </div>
+                    <h3>Meus Remédios</h3>
+                    <div class="med-list" id="home-med-list">
+                        <!-- Medicine cards will be injected by JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Busca de Remédios -->
+            <section id="busca-remedios" class="screen">
+                <header class="screen-header">
+                    <h2>Buscar</h2>
+                </header>
+                <div class="search-bar-container">
+                    <input type="text" id="search-input" placeholder="Pesquisar remédio...">
+                </div>
+                <div class="search-results" id="search-results">
+                    <!-- Results cards -->
+                </div>
+            </section>
+
+            <!-- Detalhe do Remédio -->
+            <section id="detalhe-remedio" class="screen">
+                <button class="btn-back" onclick="navigate('home')">←</button>
+                <div id="med-detail-content">
+                    <!-- Detail content injected by JS -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Bottom Navigation (Hidden on auth screens) -->
+        <nav id="bottom-nav" class="hidden">
+            <button class="nav-item active" onclick="navigate('home')">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                <span class="label">Início</span>
+            </button>
+            <button class="nav-item" onclick="navigate('busca-remedios')">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <span class="label">Buscar</span>
+            </button>
+            <button class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span class="label">Postos</span>
+            </button>
+            <button class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                <span class="label">Perfil</span>
+            </button>
+        </nav>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
